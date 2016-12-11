@@ -5,7 +5,7 @@
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>Labyrinth</name>
             <c-extensions/>
-            <cpp-extensions/>
+            <cpp-extensions>cpp</cpp-extensions>
             <header-extensions/>
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
@@ -16,7 +16,15 @@
                     <type>1</type>
                 </confElem>
                 <confElem>
+                    <name>Safe</name>
+                    <type>1</type>
+                </confElem>
+                <confElem>
                     <name>Release</name>
+                    <type>1</type>
+                </confElem>
+                <confElem>
+                    <name>UnitTests</name>
                     <type>1</type>
                 </confElem>
             </confList>

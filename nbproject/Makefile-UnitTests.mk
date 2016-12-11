@@ -23,7 +23,7 @@ AS=as
 # Macros
 CND_PLATFORM=MinGW-Windows
 CND_DLIB_EXT=dll
-CND_CONF=Debug
+CND_CONF=UnitTests
 CND_DISTDIR=dist
 CND_BUILDDIR=build
 
@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/source/main.o
+	${OBJECTDIR}/tests/main.o
 
 
 # C Compiler Flags
@@ -52,7 +52,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-Lthird_party/unittest-cpp/lib -lUnitTest++
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -62,10 +62,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/labyrinth.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/labyrinth ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/source/main.o: source/main.cpp 
-	${MKDIR} -p ${OBJECTDIR}/source
+${OBJECTDIR}/tests/main.o: tests/main.cpp 
+	${MKDIR} -p ${OBJECTDIR}/tests
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Werror -DDEBUG -Ithird_party -Ithird_party/GSL -Ithird_party/SFML/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/main.o source/main.cpp
+	$(COMPILE.cc) -g -Werror -DDEBUG -Ithird_party -Ithird_party/GSL -Ithird_party/SFML/include -Ithird_party/unittest-cpp/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/tests/main.o tests/main.cpp
 
 # Subprojects
 .build-subprojects:

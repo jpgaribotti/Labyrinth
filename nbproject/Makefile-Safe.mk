@@ -23,7 +23,7 @@ AS=as
 # Macros
 CND_PLATFORM=MinGW-Windows
 CND_DLIB_EXT=dll
-CND_CONF=Debug
+CND_CONF=Safe
 CND_DISTDIR=dist
 CND_BUILDDIR=build
 
@@ -65,7 +65,7 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/labyrinth.exe: ${OBJECTFILES}
 ${OBJECTDIR}/source/main.o: source/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/source
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Werror -DDEBUG -Ithird_party -Ithird_party/GSL -Ithird_party/SFML/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/main.o source/main.cpp
+	$(COMPILE.cc) -O2 -Werror -DSAFE -Ithird_party -Ithird_party/GSL -Ithird_party/SFML/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/source/main.o source/main.cpp
 
 # Subprojects
 .build-subprojects:

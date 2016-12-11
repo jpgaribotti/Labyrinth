@@ -1,0 +1,12 @@
+[submodule "third_party/GSL"]
+	path = third_party/GSL
+	url = https://github.com/jpgaribotti/GSL.git
+[submodule "third_party/unittest-cpp"]
+	path = third_party/unittest-cpp
+	url = https://github.com/jpgaribotti/unittest-cpp.git
+[submodule "third_party/SFML"]
+	path = third_party/SFML
+	url = https://github.com/jpgaribotti/SFML.git
+[submodule "third_party/tinyformat"]
+	path = third_party/tinyformat
+	url = https://github.com/jpgaribotti/tinyformat.git
